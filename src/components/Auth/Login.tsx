@@ -9,12 +9,9 @@ import axios from 'src/utils/AxiosSetup';
 import { apiEndpoints } from 'src/utils/ApiEndpoints';
 import { LoginArgs } from 'src/__types__/Auth';
 import { GenericEnum } from 'src/utils/Enums';
-import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [error, setError] = React.useState<string>();
-
-  const navigate = useNavigate();
 
   const loginMutation = useMutation((values: LoginArgs) =>
     axios.post(apiEndpoints.login, values)
@@ -40,9 +37,9 @@ const Login = () => {
   React.useEffect(() => {
     if (loginMutation.data && loginMutation.data.data.token) {
       localStorage.setItem(GenericEnum.Token, loginMutation.data.data.token);
-      navigate('/dashboard', { replace: true });
+      window.location.href = '/dashboard';
     }
-  }, [loginMutation.data, navigate]);
+  }, [loginMutation.data]);
 
   return (
     <div

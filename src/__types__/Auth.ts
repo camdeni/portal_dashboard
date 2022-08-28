@@ -13,3 +13,8 @@ export interface LoginArgs {
   phone_number: string;
   password: string;
 }
+
+export interface AuthContextT {
+  isAuth?: boolean;
+  loading?: boolean;
+}

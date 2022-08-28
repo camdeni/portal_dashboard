@@ -1,14 +1,15 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import MainRoute from 'src/components/Routers/MainRoutes';
-
-const queryClient = new QueryClient();
+import { AuthContext } from 'src/contexts/Auth';
+import useMe from 'src/hooks/useMe';
 
 const App = () => {
+  const { loading, isAuth } = useMe();
+
   return (
-    <QueryClientProvider client={queryClient}>
+    <AuthContext.Provider value={{ loading, isAuth }}>
       <MainRoute />
-    </QueryClientProvider>
+    </AuthContext.Provider>
   );
 };
 
