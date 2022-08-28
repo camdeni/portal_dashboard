@@ -1,5 +1,5 @@
 import React from 'react';
-import MainRoute from 'src/components/Routers/MainRoutes';
+import MainRoute from 'src/components/Routes/MainRoutes';
 import { AuthContext } from 'src/contexts/Auth';
 import useMe from 'src/hooks/useMe';
 
