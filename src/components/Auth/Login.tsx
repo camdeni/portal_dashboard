@@ -14,7 +14,10 @@ const Login = () => {
   const [error, setError] = React.useState<string>();
 
   const loginMutation = useMutation((values: LoginArgs) =>
-    axios.post(apiEndpoints.login, values)
+    axios.post(apiEndpoints.login, {
+      ...values,
+      phone_number: `25${values.phone_number}`,
+    })
   );
 
   const formik = useFormik({
