@@ -9,12 +9,13 @@ const InputField = ({
   placeholder,
   value,
   name,
+  error,
 }: InputFieldProps) => {
   return (
     <input
       type={type || 'text'}
       placeholder={placeholder}
-      className={classname('input w-full max-w-xs', style.inputField)}
+      className={classname('input w-full max-w-xs to-error', style.inputField)}
       value={value}
       onChange={onChange}
       name={name}

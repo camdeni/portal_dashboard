@@ -39,6 +39,7 @@ const Login = () => {
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
               type="text"
+              error={formik.errors.phoneNumber}
             />
             <InputField
               name="password"
@@ -46,10 +47,11 @@ const Login = () => {
               onChange={formik.handleChange}
               value={formik.values.password}
               type="password"
+              error={formik.errors.password}
             />
             <button
               className={classname(
-                'btn btn-primary capitalize text-white rounded-xl  outline-none focus:outline-none bg-primary border-none hover:bg-primary',
+                'btn btn-primary capitalize text-white outline-none focus:outline-none bg-primary border-none hover:bg-primary',
                 style.loginBtn
               )}
               type="submit"
