@@ -5,7 +5,7 @@ import classname from 'classnames';
 const Login = () => {
   return (
     <div className={classname(style.login)}>
-      <h1>Login</h1>
+      <h1 className='text-black'>Login</h1>
     </div>
   );
 };
