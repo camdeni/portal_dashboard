@@ -17,4 +17,5 @@ export interface LoginArgs {
 export interface AuthContextT {
   isAuth?: boolean;
   loading?: boolean;
+  me?: any;
 }

@@ -4,10 +4,10 @@ import { AuthContext } from 'src/contexts/Auth';
 import useMe from 'src/hooks/useMe';
 
 const App = () => {
-  const { loading, isAuth } = useMe();
+  const { loading, isAuth, me } = useMe();
 
   return (
-    <AuthContext.Provider value={{ loading, isAuth }}>
+    <AuthContext.Provider value={{ loading, isAuth, me }}>
       <MainRoute />
     </AuthContext.Provider>
   );

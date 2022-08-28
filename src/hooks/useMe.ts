@@ -31,6 +31,7 @@ const useMe = () => {
   return {
     loading: isLoading,
     isAuth,
+    me: data?.data.data,
   };
 };
 export default useMe;
