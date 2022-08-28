@@ -15,7 +15,11 @@ const InputField = ({
     <input
       type={type || 'text'}
       placeholder={placeholder}
-      className={classname('input w-full max-w-xs to-error', style.inputField)}
+      className={classname(
+        'input w-full max-w-xs',
+        style.inputField,
+        error && style.inputFieldError
+      )}
       value={value}
       onChange={onChange}
       name={name}

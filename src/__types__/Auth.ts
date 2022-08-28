@@ -8,3 +8,8 @@ export interface InputFieldProps {
   value: string;
   error?: string;
 }
+
+export interface LoginArgs {
+  phone_number: string;
+  password: string;
+}
