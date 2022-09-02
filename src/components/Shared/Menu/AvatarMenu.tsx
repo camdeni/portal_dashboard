@@ -4,8 +4,17 @@ import style from './Menu.module.scss';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import { avatarMenu } from 'src/utils/Menus';
+import { useNavigate } from 'react-router-dom';
+import { GenericEnum } from 'src/utils/Enums';
 
 export const AvatarMenu = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem(GenericEnum.Token);
+    navigate('/', { replace: true });
+  };
+
   return (
     <div
       className={classname(
@@ -34,7 +43,14 @@ export const AvatarMenu = () => {
       <div className={classname('relative', style.aMenu)}>
         <ul>
           {avatarMenu.map((item) => (
-            <li key={item.name}>
+            <li
+              key={item.name}
+              onClick={() => {
+                if (item.name === 'Logout') {
+                  handleLogout();
+                }
+              }}
+            >
               <Link to={item.uri} className="flex items-center h-full">
                 <Icon icon={item.icon} fontSize={30} />
                 <span className="ml-3 text-14">{item.name}</span>
