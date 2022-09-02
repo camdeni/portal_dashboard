@@ -15,7 +15,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Layout>
+    <Layout pageTitle={{ title: 'Dashboard' }}>
       <h1>Welcome</h1>
     </Layout>
   );

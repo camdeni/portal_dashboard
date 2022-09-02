@@ -3,7 +3,9 @@ import Layout from 'src/components/Shared/PortalLayout';
 
 const Report = () => {
   return (
-    <Layout>
+    <Layout
+      pageTitle={{ title: 'Report', icon: 'icon-park-twotone:sales-report' }}
+    >
       <h1>Report</h1>
     </Layout>
   );

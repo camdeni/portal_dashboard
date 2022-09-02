@@ -40,7 +40,9 @@ const SideBarMenu = () => {
               className={classname(
                 'relative collapse collapse-arrow',
                 style.listMenu,
-                location.pathname === item.uri && style.listMenuActive
+                location.pathname === item.uri && style.listMenuActive,
+                item.sub?.find((s) => s.uri === location.pathname) &&
+                  style.listMenuActive
               )}
               onClick={() => handleCollapse(itemKey)}
             >
