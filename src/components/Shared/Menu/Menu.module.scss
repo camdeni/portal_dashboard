@@ -79,4 +79,58 @@
       object-fit: cover;
     }
   }
+  .user {
+    .avatarMenu {
+      animation: avatarMenuAnimation 0.2s ease-in-out;
+    }
+  }
+  @keyframes avatarMenuAnimation {
+    from {
+      margin-top: 50px;
+    }
+    to {
+      margin-top: 0px;
+    }
+  }
+}
+.avatarMenu {
+  width: 280px;
+  margin-top: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  background: white;
+  padding: 32px 0px 32px 25px;
+  .userDetail {
+    padding-right: 20px;
+    .hr {
+      height: 2px;
+      background: rgba(217, 217, 217, 0.44);
+      border-radius: 20px;
+      margin-top: 15px;
+    }
+    .userAvatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      background-color: #e6e6e6;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+  .aMenu {
+    margin-top: 20px;
+    li {
+      height: 60px;
+      padding: 0 17px;
+      &:hover {
+        background: #e6e6e6;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
+  }
 }

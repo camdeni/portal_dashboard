@@ -22,3 +22,12 @@ export const sidebarMenus = [
     ],
   },
 ];
+
+export const avatarMenu = [
+  {
+    name: 'Settings',
+    icon: 'icon-park-twotone:setting-computer',
+    uri: '#',
+  },
+  { name: 'Logout', icon: 'majesticons:logout-half-circle-line', uri: '#' },
+];
