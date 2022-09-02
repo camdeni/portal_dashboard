@@ -1,12 +1,15 @@
 import * as React from 'react';
 import classname from 'classnames';
-import style from './SideBarMenu.module.scss';
+import style from './Menu.module.scss';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import { sidebarMenus } from 'src/utils/Menus';
+import { useLocation } from 'react-router-dom';
 
 const SideBarMenu = () => {
   const [collapseId, setCollapseId] = React.useState<number>();
+
+  const location = useLocation();
 
   const handleCollapse = (itemKey: number) => {
     if (itemKey === collapseId) {
@@ -36,11 +39,13 @@ const SideBarMenu = () => {
               key={itemKey}
               className={classname(
                 'relative collapse collapse-arrow',
-                style.listMenu
+                style.listMenu,
+                location.pathname === item.uri && style.listMenuActive
               )}
+              onClick={() => handleCollapse(itemKey)}
             >
               <Link
-                to={item.uri}
+                to={item.sub ? '#' : item.uri}
                 className="flex items-center justify-between w-full"
               >
                 <div className="flex items-center">
@@ -55,10 +60,7 @@ const SideBarMenu = () => {
                   </span>
                 </div>
                 {item.sub && item.sub.length > 0 && (
-                  <button
-                    className="outline-none focus:outline-none"
-                    onClick={() => handleCollapse(itemKey)}
-                  >
+                  <button className="outline-none focus:outline-none">
                     <Icon
                       icon={
                         collapseId === itemKey

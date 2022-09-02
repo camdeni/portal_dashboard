@@ -12,6 +12,7 @@ module.exports = {
       },
       margin: {
         12: '12px',
+        10: '10px',
       },
     },
   },

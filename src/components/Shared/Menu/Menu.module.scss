@@ -1,0 +1,82 @@
+@import 'src/styles/colors.scss';
+
+.sideBarMenu {
+  width: 15%;
+  z-index: 200;
+  .header {
+    height: 80px;
+    padding: 15px 35px;
+    box-shadow: 0px 1px 100px rgba(1, 52, 0, 0.1);
+  }
+  .sidebarNavigation {
+    padding: 35px 0px 35px 20px;
+    .menu {
+      margin-top: 43px;
+      li {
+        padding: 15px 0px;
+        padding-left: 15px;
+        padding-right: 20px;
+        margin-top: 20px;
+      }
+      .listMenuActive {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .listMenu {
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
+        .listMenuSpan {
+          margin-left: 12px;
+        }
+      }
+      .subMenu {
+        z-index: 100;
+        padding: 30px 15px;
+        margin-top: 10px;
+        border-left: 1px solid #9aab5c;
+        margin-left: 8px;
+        animation: subMenuAnimation 0.2s ease-in-out;
+        li {
+          padding-left: 5px;
+          &:first-child {
+            margin-top: 10px;
+          }
+        }
+      }
+      @keyframes subMenuAnimation {
+        from {
+          margin-top: 0;
+        }
+        to {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.headerMenu {
+  height: 95px;
+  background: #f1f1f1;
+  z-index: 150;
+  .menuContainer {
+    margin-left: 15%;
+    padding: 0 80px;
+    margin-top: 22px;
+  }
+  .avatar {
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background-color: #ddd;
+      object-fit: cover;
+    }
+  }
+}
