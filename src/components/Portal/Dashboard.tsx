@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GenericEnum } from 'src/utils/Enums';
 import useAuth from 'src/hooks/useAuth';
+import Layout from 'src/components/Shared/PortalLayout';
 
 const Dashboard = () => {
   const { me } = useAuth();
@@ -14,13 +15,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to dashboard - {me && <b>{me.username}</b>}</h1>
-      <br />
-      <button className="btn" onClick={handleLogout}>
-        Logout
-      </button>
-    </div>
+    <Layout>
+      <h1>Welcome</h1>
+    </Layout>
   );
 };
 export default Dashboard;

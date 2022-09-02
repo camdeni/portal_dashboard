@@ -6,6 +6,13 @@ module.exports = {
       colors: {
         primary: '#83A310',
       },
+      fontSize: {
+        14: '14px',
+        20: '20px',
+      },
+      margin: {
+        12: '12px',
+      },
     },
   },
   plugins: [require('daisyui')],
